@@ -1,0 +1,37 @@
+.header
+  display: flex
+  justify-content: center
+  align-items: center
+  //height: 80px
+  position: absolute
+  top: 0
+  width: 100%
+  &__content
+    background-color: #fff
+    position: relative
+    border-radius: 0 0 80px 80px
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 80px
+  &__logo
+    width: 135px
+    position: absolute
+    left: 80px
+    top: 0
+
+.nav-list
+  display: none
+  margin: 0
+  padding: 0
+  &__item
+    list-style-type: none
+    padding: 4px 18px
+    border-radius: 18px
+    font-size: 16px
+    font-weight: 700
+    &:hover
+      color: #ae438b
+  @media screen and (min-width: 1024px)
+    display: flex
+    justify-content: space-between
