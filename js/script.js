@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 //scroll to top
 let scrollToTopVisible = false;
-let scrollingNavbar= document.querySelector('#scrollingNavbar')
+let scrollingNavbar = document.querySelector('#scrollingNavbar')
 document.addEventListener("scroll", () => {
   const scrollToTop = document.body.querySelector(".scroll-to-top");
   if (document.documentElement.scrollTop > 100) {
@@ -29,13 +29,13 @@ document.addEventListener("scroll", () => {
       scrollToTopVisible = false;
     }
   }
-  if (document.documentElement.scrollTop > 2700){
+  if (document.documentElement.scrollTop > 2700) {
     scrollingNavbar.style.transform = 'translate3d(0px, -250px, 0px)'
-  }else {
+  } else {
     scrollingNavbar.style.transform = 'translate3d(0px, 0, 0px)'
   }
   scrollToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({top: 0, behavior: "smooth"});
   });
 });
 
@@ -62,78 +62,23 @@ function fadeIn(el, display) {
   })();
 }
 
-//inputs masks
-$(document).ready(function () {
-  $("#phone").inputmask("+38(099)-999-99-99");
-  Inputmask({ mask: "MD00809999999" }).mask("#card_code");
-  Inputmask({ mask: "9999" }).mask("#code");
-  Inputmask({ mask: "9999" }).mask("#code-sms");
-  Inputmask({
-    mask: "99.99.9999",
-    placeholder: "дд.мм.рррр",
-    alias: "datetime",
-  }).mask("#dob");
-});
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        let id = link.getAttribute('href').replace('#', '')
+        if (id === entry.target.id) {
+          link.classList.add('active')
+        } else {
+          link.classList.remove('active')
+        }
+      })
+    }
+  })
+}, {
+  threshold: 0.9
+})
 
-//form submit
-$(document).on("submit", "form[name=register]", function (e) {
-  e.preventDefault();
-
-  $.ajax({
-    type: $(this).attr("method"),
-    url: $(this).attr("action"),
-    cache: false,
-    //contentType: '',
-    dataType: "json",
-    data: $(this).serialize(), // serializes the form's elements.
-    success: function (data) {
-      console.log(data); // show response from the php script.
-      $("div.modal").modal("hide");
-      $("#exampleModal .modal-title").html(data.title);
-      $("#exampleModal .modal-body p").html(data.text);
-      $("#exampleModal").modal("show");
-      if (data.error == false) {
-        $("form[name=register]")[0].reset();
-      }
-    },
-  });
-});
-
-$("select#city").chained("select#region");
-
-$("select#region").change(function () {
-  $("input[name=region]").val($(this).find(":selected").text());
-});
-
-$("select#city").change(function () {
-  var t = $(this).find(":selected").text();
-  if (t == "Інше") {
-    $("textarea[name=city_text]").text("").show();
-  } else {
-    $("textarea[name=city_text]").hide().text("");
-  }
-});
-
-$(document).on("submit", "form[name=register]", function (e) {
-  e.preventDefault();
-
-  $.ajax({
-    type: $(this).attr("method"),
-    url: $(this).attr("action"),
-    cache: false,
-    //contentType: '',
-    dataType: "json",
-    data: $(this).serialize(), // serializes the form's elements.
-    success: function (data) {
-      console.log(data); // show response from the php script.
-      $("div.modal").modal("hide");
-      $("#exampleModal .modal-title").html(data.title);
-      $("#exampleModal .modal-body p").html(data.text);
-      $("#exampleModal").modal("show");
-      if (data.error == false) {
-        $("form[name=register]")[0].reset();
-        $("select#region").trigger("change");
-      }
-    },
-  });
-});
+document.querySelectorAll('.content-block').forEach(section => {
+  observer.observe(section)
+})

@@ -12,15 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    </script>
 
     <title>Асакард</title>
 </head>
-<body >
+<body>
 <header class="header">
     <div class="container">
         <div class="row">
@@ -28,7 +26,7 @@
 
                 <div class="header__content ">
                     <div class="">
-                        <img class="header__logo" src="images/logo.svg">
+                        <img class="header__logo" src="images/asl2.png">
                     </div>
                     <nav class="">
                         <ul class="nav-list">
@@ -62,15 +60,41 @@
     <div class="row">
         <div class="col-12 col-lg-4 d-none d-lg-block aside_menu__wrap">
             <ul class="aside_menu" id="scrollingNavbar">
-                <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent1">Що таке програма Асакард?</a></li>
-                <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent2">Як стати учасником програми</a></li>
-                <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent3">Умови участі в програмі</a></li>
+                <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent1">Що таке програма Асакард?</a>
+                </li>
+                <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent2">Як стати учасником
+                    програми</a></li>
+                <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent3">Умови участі в програмі</a>
+                </li>
                 <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent4">Пошук лікаря </a></li>
                 <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent5">Поширені запитання</a></li>
                 <li class="aside_menu__item"><a class="nav-link" href="#scrollingContent6">Пошук аптек</a></li>
             </ul>
         </div>
         <div class="col-12 col-lg-8" data-bs-spy="scroll" data-bs-target="scrollingNavbar" tabindex="0">
+            <div class="mobile-menu col-12 d-lg-none accordion" id="accordion-menu">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseMenu" aria-expanded="true" aria-controls="collapseMenu">
+                            Що таке програма Асакард?
+                        </button>
+                    </h2>
+
+                    <ul id="collapseMenu" class="mobile-menu__list accordion-collapse collapse hide"
+                        data-bs-parent="#accordion-menu">
+                        <li class="mobile-menu__list_item"><a href="#scrollingContent1">Що таке програма Асакард</a>
+                        </li>
+                        <li class="mobile-menu__list_item"><a href="#scrollingContent2">Як стати учасником програми</a>
+                        </li>
+                        <li class="mobile-menu__list_item"><a href="#scrollingContent3">Умови участі в програмі</a></li>
+                        <li class="mobile-menu__list_item"><a href="#scrollingContent4">Пошук лікаря</a></li>
+                        <li class="mobile-menu__list_item"><a href="#scrollingContent5">Поширені запитання</a></li>
+                        <li class="mobile-menu__list_item"><a href="#scrollingContent6">Пошук аптек</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <h1 class="main_title" id="main-info">Програма Асакард</h1>
             <div id="scrollingContent1" class="content-block content-block--1">
                 <h3 class="content-block__title">Що таке програма Асакард?</h3>
@@ -137,7 +161,7 @@
                         <strong>посиланням</strong></a>
                 </p>
             </div>
-            <div id="scrollingContent4" class="search">
+            <div id="scrollingContent4" class="content-block search">
                 <h2 class="secondary-title">Пошук спеціалістів</h2>
                 <p class="secondary-subtitle">з лікування запальних захворювань кишечнику в Україні</p>
                 <form class="form-doctors" method="get" action="">
@@ -196,7 +220,7 @@
                     </div>
                 </form>
             </div>
-            <div id="scrollingContent5" class="faq">
+            <div id="scrollingContent5" class="content-block faq">
                 <h3 class="secondary-title">Поширені запитання</h3>
                 <div class="accordion" id="accordionFaq">
                     <div class="accordion-item accordion-item--1">
@@ -312,7 +336,7 @@
                     </div>
                 </div>
             </div>
-            <div id="scrollingContent6" class="pharmacy">
+            <div id="scrollingContent6" class="content-block pharmacy">
                 <div class="pharmacy-form">
                     <h3 class="secondary-title">Пошук аптек, що беруть участь у програмі Асакард</h3>
                     <form action="" class="pharmacy-search">
@@ -468,29 +492,30 @@
 <footer class="footer">
     <div class="container">
         <div class="row footer-row">
-                <div class="col-12 col-lg-6">
-                    <h2 class="footer-title">Програма Асакард</h2>
-                   <!--                    <p class="footer-mail">Contact us: <a href="mailto:somemail@gmail.com">somemail@gmail.com</a></p>-->
-                </div>
-                <div class="footer-nav col-12 col-lg-6 ">
-                    <!-- <ul class="nav-list">
-                        <li class="nav-list__item">
-                            <a href="#scrollingContent1">Головна</a></li>
-                        <li class="nav-list__item">
-                            <a href="#scrollingContent2">Як стати учасником програми </a></li>
-                        <li class="nav-list__item">
-                            <a href="#scrollingContent3">Пошук лікаря</a></li>
-                        <li class="nav-list__item">
-                            <a href="#scrollingContent4">Умови участі в програмі</a></li>
-                        <li class="nav-list__item">
-                            <a href="#scrollingContent5">Поширені запитання </a>
-                        </li>
-                        <li class="nav-list__item">
-                            <a href="#scrollingContent6">Пошук аптек</a>
-                        </li>
-                    </ul> -->
-                </div>
-            <p class="copyright"><img class="footer-logo" src="./images/medicard_logo-removebg-preview.png"
+            <div class="col-12 col-lg-6">
+                <h2 class="footer-title">Програма Асакард</h2>
+                <!--                    <p class="footer-mail">Contact us: <a href="mailto:somemail@gmail.com">somemail@gmail.com</a></p>-->
+            </div>
+            <div class="footer-nav col-12 col-lg-6 ">
+                 <ul class="nav-list">
+                    <li class="nav-list__item">
+                        <a href="#scrollingContent1">Головна</a></li>
+                    <li class="nav-list__item">
+                        <a href="#scrollingContent2">Як стати учасником програми </a></li>
+                    <li class="nav-list__item">
+                        <a href="#scrollingContent3">Пошук лікаря</a></li>
+                    <li class="nav-list__item">
+                        <a href="#scrollingContent4">Умови участі в програмі</a></li>
+                    <li class="nav-list__item">
+                        <a href="#scrollingContent5">Поширені запитання </a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="#scrollingContent6">Пошук аптек</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="copyright">
+                <img class="footer-logo" src="./images/medicard_logo-removebg-preview.png"
                                       alt="logo"><span>Copyright © 2024</span></p>
         </div>
 
@@ -509,11 +534,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"
-        integrity="sha512-F5Ul1uuyFlGnIT1dk2c4kB4DBdi5wnBJjVhL7gQlGh46Xn0VhvD8kgxLtjdZ5YN83gybk/aASUAlpdoWUjRR3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./js/jquery.chained.js"></script>
-<script src="./js/leaflet.js"></script>
+
 <script src="./js/script.js"></script>
 </body>
 </html>

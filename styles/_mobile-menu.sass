@@ -1,14 +1,28 @@
 .mobile-menu
-  height: 100%
-  width: 250px
-  background-color: #3381a7
-  position: absolute
-  right: -270px
-  top: 0
-  display: flex
-  justify-content: space-between
-  transition: .3s
-  z-index: 2
+  .accordion-item
+    padding: 0
+  .accordion-header
+    background-color: #AD428A
+    border-radius: 12px
+  .accordion-button
+    color: #fff
+  &__list
+    list-style-type: none
+    padding-left: 0
+  &__list_item
+    margin: 5px 0
+    padding: 10px
+    &:hover
+      background-color: rgba(223, 226, 168, 0.5)
+      font-weight: 600
+      a
+        font-weight: 400
+        line-height: 1.4
+        font-size: 16px
+        padding: 11px 32px 11px 24px
+    a
+      color: #000
+      padding: 11px 32px 11px 24px
 .mobile-menu.active
   right: 0
 
