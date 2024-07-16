@@ -49,15 +49,20 @@
   }
 }
 
+.mobile-menu {
+  margin-bottom: 40px;
+}
 .mobile-menu .accordion-item {
   padding: 0;
 }
 .mobile-menu .accordion-header {
   background-color: #AD428A;
-  border-radius: 12px;
+  border-top-left-radius: var(--bs-accordion-inner-border-radius);
+  border-top-right-radius: var(--bs-accordion-inner-border-radius);
 }
 .mobile-menu .accordion-button {
   color: #fff;
+  background-color: #AD428A;
 }
 .mobile-menu__list {
   list-style-type: none;
