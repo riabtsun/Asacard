@@ -247,6 +247,7 @@
 }
 .form-doctors .prime-btn {
   margin-top: 30px;
+  display: block;
 }
 
 #doctors {
