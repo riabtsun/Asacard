@@ -172,9 +172,9 @@
   padding-top: 20px;
 }
 .footer .row {
-  border-radius: 24px 24px 0 0;
+  border-radius: 80px 80px 0 0;
   background-color: #d3c9a5;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 @media screen and (min-width: 1024px) {
   .footer {
@@ -245,6 +245,7 @@
   align-items: end;
   column-gap: 15px;
   justify-content: center;
+  margin-bottom: 0;
 }
 .copyright span {
   line-height: 15px;
@@ -670,7 +671,8 @@ a:hover {
   background-color: #DFE2A8;
   background-image: url("../images/1.svg");
   background-repeat: no-repeat;
-  background-position: 0 10px;
+  background-position: -10px 0;
+  background-size: auto;
 }
 @media screen and (min-width: 768px) {
   .content-block--2 .step-1 {
@@ -688,9 +690,9 @@ a:hover {
 }
 .content-block--2 .step-2 {
   background-color: #A3C4D2;
-  background-image: url("../images/22.svg");
+  background-image: url("../images/2.svg");
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: -10px 0;
 }
 @media screen and (min-width: 768px) {
   .content-block--2 .step-2 {
@@ -699,6 +701,14 @@ a:hover {
 }
 .content-block--2 .step-3 {
   background-color: #edc2de;
+  background-image: url("../images/3.svg");
+  background-repeat: no-repeat;
+  background-position: -10px 0;
+}
+@media screen and (min-width: 768px) {
+  .content-block--2 .step-3 {
+    padding: 30px 30px 30px 140px;
+  }
 }
 
 .prime-btn {
