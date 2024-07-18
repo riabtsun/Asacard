@@ -30,7 +30,7 @@ document.addEventListener("scroll", () => {
     }
   }
   if (document.documentElement.scrollTop > 2700) {
-    scrollingNavbar.style.transform = 'translate3d(0px, -250px, 0px)'
+    scrollingNavbar.style.transform = 'translate3d(0px, -260px, 0px)'
   } else {
     scrollingNavbar.style.transform = 'translate3d(0px, 0, 0px)'
   }
