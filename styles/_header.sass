@@ -7,6 +7,7 @@
   top: 0
   width: 100%
   z-index: 5
+  transition: transform .3s linear
   &__content
     background-color: #fff
     position: relative
@@ -24,6 +25,8 @@
       left: 80px
       top: 10px
 
+.header.header-hide
+  transform: translateY(-120px)
 .nav-list
   display: none
   margin: 0
