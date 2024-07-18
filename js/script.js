@@ -50,7 +50,7 @@ document.addEventListener("scroll", () => {
   if (document.documentElement.scrollTop > 2700) {
     scrollingNavbar.style.transform = 'translate3d(0px, -260px, 0px)'
   } else {
-    scrollingNavbar.style.transform = 'translate3d(0px, 0, 0px)'
+    if (scrollingNavbar) scrollingNavbar.style.transform = 'translate3d(0px, 0, 0px)'
   }
   scrollToTop.addEventListener("click", () => {
     window.scrollTo({top: 0, behavior: "smooth"});
